@@ -1,0 +1,19 @@
+import { cn } from "@galacius/design-system/utils"
+import type { FC, ReactNode } from "react"
+
+interface SectionProps {
+  children: ReactNode
+  paddingBotton?: boolean
+  id?: string
+}
+
+export const Section: FC<SectionProps> = ({ children, paddingBotton, id }) => {
+  return (
+    <section
+      id={id}
+      className={cn("bg-background px-6 py-4 md:pt-16", paddingBotton && "md:pb-16")}
+    >
+      {children}
+    </section>
+  )
+}

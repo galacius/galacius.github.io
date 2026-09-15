@@ -1,0 +1,24 @@
+@import "@galacius/design-system/styles.css";
+
+@layer utilities {
+  /* Marketing Scale
+   * Extends @galacius/design-system's app-scale typography tokens
+   * (.text-display, .text-h1, etc.) with larger, responsive sizes for
+   * landing-page hero headlines and lead paragraphs. Use these instead of
+   * raw text-3xl/5xl utilities on marketing pages.
+   */
+  .text-hero {
+    @apply text-3xl leading-tight font-bold md:text-5xl;
+  }
+  .text-lead {
+    @apply text-base leading-relaxed font-normal md:text-lg;
+  }
+
+  /* Semantic Aliases (matches the DS's alias naming convention) */
+  .headline-hero {
+    @apply text-3xl leading-tight font-bold md:text-5xl;
+  }
+  .lead-text {
+    @apply text-base leading-relaxed font-normal md:text-lg;
+  }
+}

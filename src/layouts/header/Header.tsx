@@ -1,0 +1,30 @@
+import { cn } from "@galacius/design-system/utils"
+import { useEffect, useState, type FC } from "react"
+import { HeaderDesktopView } from "./HeaderDesktopView"
+import { HeaderMobileView } from "./HeaderMobileView"
+import { HeaderTitle } from "./HeaderTitle"
+
+export const Header: FC = () => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-50 flex h-16 items-center border-b border-border bg-background px-6 transition-shadow duration-200",
+        scrolled && "shadow-sm"
+      )}
+    >
+      <HeaderTitle />
+      <HeaderDesktopView />
+      <HeaderMobileView />
+    </header>
+  )
+}
