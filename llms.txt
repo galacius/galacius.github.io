@@ -1,0 +1,45 @@
+# Galacius
+
+> Galacius is a lightweight, native desktop app for managing Kubernetes clusters — a clean, modern, watch-based UI over your cluster, without the overhead of Electron. Free and open source for macOS and Linux.
+
+## Installation
+
+**macOS**
+- Homebrew: 
+  ```
+  brew tap galacius/homebrew-galacius
+  brew trust galacius/galacius/galacius
+  brew install galacius
+  ```
+- Manual install script: 
+  ```
+  curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/main/scripts/install.sh" | bash
+  ```
+- Or download the Apple Silicon binary directly from the site
+
+**Linux (Ubuntu 24.04 "noble" and derivatives)**
+- apt: add the Galacius APT repository, then `sudo apt-get install galacius` (see the site for the exact commands)
+- Manual install script: same as macOS
+- Or download the amd64 binary directly from the site
+
+**Windows**
+- Prebuilt installers are not published yet — check the GitHub releases page for updates.
+
+## Key facts
+
+- Free and open source (license published on GitHub)
+- Native app, not Electron-based — lightweight and fast
+- Watch-based UI that reflects live Kubernetes cluster state
+
+## Features
+
+**Core Features** (https://galacius.github.io/features/core)
+- Browse every workload in a live, watch-based view, stream pod logs and exec into a terminal, port-forward with one click, and filter across namespaces — all from the Galacius desktop app.
+
+**Plugins** (https://galacius.github.io/features/plugins)
+- Add new capabilities to Galacius without waiting on a core release. Install plugins from the official marketplace, or point Galacius at your own custom marketplace.
+
+## Resources
+
+- App: https://galacius.github.io/
+- Source & releases: https://github.com/galacius/galacius
