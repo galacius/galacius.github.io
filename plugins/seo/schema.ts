@@ -21,6 +21,24 @@ export function buildSchemaTags(config: SchemaConfig): string {
   if (isHome) {
     schemas.push({
       "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${normalizedSiteUrl}/#organization`,
+      name: config.name,
+      url: normalizedSiteUrl,
+      logo: `${normalizedSiteUrl}/og-image.png`,
+    })
+
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${normalizedSiteUrl}/#website`,
+      name: config.name,
+      url: normalizedSiteUrl,
+      publisher: { "@id": `${normalizedSiteUrl}/#organization` },
+    })
+
+    schemas.push({
+      "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "@id": `${normalizedSiteUrl}/#software`,
       name: config.name,
