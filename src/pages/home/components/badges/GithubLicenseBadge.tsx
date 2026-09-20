@@ -9,6 +9,7 @@ export const GithubLicenseBadge: FC = () => {
   return (
     <Button
       size="sm"
+      nativeButton={false}
       className="h-8 gap-0 overflow-hidden rounded-lg p-0 hover:brightness-95"
       render={
         <a

@@ -9,6 +9,7 @@ export const GithubReleaseBadge: FC = () => {
   return (
     <Button
       size="sm"
+      nativeButton={false}
       className="h-8 gap-0 overflow-hidden rounded-lg p-0 hover:brightness-95"
       render={
         <a href={import.meta.env.VITE_APP_GITHUB_URL} target="_blank" rel="noopener noreferrer" />
