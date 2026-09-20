@@ -1,4 +1,4 @@
-import { Divider } from "@galacius/design-system"
+import { Divider } from "@galacius/design-system/components"
 import type { FC } from "react"
 import { NamespaceFilter } from "./components/NamespaceFilter.tsx"
 import { PodLogsExec } from "./components/PodLogsExec.tsx"

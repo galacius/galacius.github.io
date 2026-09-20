@@ -1,5 +1,9 @@
 import type { FC } from "react"
-import heroDemo from "../../../assets/home/hero/hero-demo.png"
+import heroDemo1024 from "../../../assets/home/hero/hero-demo-1024.png"
+import heroDemo640Avif from "../../../assets/home/hero/hero-demo-640.avif"
+import heroDemo1024Avif from "../../../assets/home/hero/hero-demo-1024.avif"
+import heroDemo640Webp from "../../../assets/home/hero/hero-demo-640.webp"
+import heroDemo1024Webp from "../../../assets/home/hero/hero-demo-1024.webp"
 import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
 import { GithubLicenseBadge } from "./badges/GithubLicenseBadge"
 import { Section } from "./Section"
@@ -23,12 +27,23 @@ export const Hero: FC = () => {
         {/* Right Column */}
         <div className="overflow-hidden rounded-lg bg-muted shadow-xl transition-transform duration-300 hover:scale-105">
           <ImageWithSkeleton
-            src={heroDemo}
+            src={heroDemo1024}
             alt="Galacius dashboard"
-            width={3019}
-            height={1893}
+            width={1024}
+            height={642}
             fetchPriority="high"
             className="block h-full w-full object-cover"
+            sizes="(min-width: 768px) 40vw, 100vw"
+            sources={[
+              {
+                srcSet: `${heroDemo640Avif} 640w, ${heroDemo1024Avif} 1024w`,
+                type: "image/avif",
+              },
+              {
+                srcSet: `${heroDemo640Webp} 640w, ${heroDemo1024Webp} 1024w`,
+                type: "image/webp",
+              },
+            ]}
           />
         </div>
       </div>

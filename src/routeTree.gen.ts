@@ -22,12 +22,14 @@ const FeaturesCoreRoute = FeaturesCoreRouteImport.update({
   id: '/features/core',
   path: '/features/core',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/features/core.lazy').then((d) => d.Route))
 const FeaturesPluginsRoute = FeaturesPluginsRouteImport.update({
   id: '/features/plugins',
   path: '/features/plugins',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() =>
+  import('./routes/features/plugins.lazy').then((d) => d.Route),
+)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute

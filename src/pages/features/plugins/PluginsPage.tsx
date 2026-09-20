@@ -1,5 +1,9 @@
 import type { FC } from "react"
-import pluginsHero from "../../../assets/features/plugins/plugins-hero.png"
+import pluginsHero1024 from "../../../assets/features/plugins/plugins-hero-1024.png"
+import pluginsHero1024Avif from "../../../assets/features/plugins/plugins-hero-1024.avif"
+import pluginsHero1536Avif from "../../../assets/features/plugins/plugins-hero-1536.avif"
+import pluginsHero1024Webp from "../../../assets/features/plugins/plugins-hero-1024.webp"
+import pluginsHero1536Webp from "../../../assets/features/plugins/plugins-hero-1536.webp"
 import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
 
 export const PluginsPage: FC = () => {
@@ -15,11 +19,22 @@ export const PluginsPage: FC = () => {
 
       <div className="mx-auto mt-8 max-w-5xl overflow-hidden rounded-xl bg-muted shadow-xl transition-transform duration-300 hover:scale-105">
         <ImageWithSkeleton
-          src={pluginsHero}
+          src={pluginsHero1024}
           alt="Galacius plugins"
-          width={3019}
-          height={1893}
+          width={1024}
+          height={642}
           className="block h-full w-full object-cover"
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          sources={[
+            {
+              srcSet: `${pluginsHero1024Avif} 1024w, ${pluginsHero1536Avif} 1536w`,
+              type: "image/avif",
+            },
+            {
+              srcSet: `${pluginsHero1024Webp} 1024w, ${pluginsHero1536Webp} 1536w`,
+              type: "image/webp",
+            },
+          ]}
         />
       </div>
 
