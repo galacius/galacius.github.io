@@ -35,6 +35,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: "/",
+    build: {
+      sourcemap: true,
+    },
     plugins: [
       // Must come before react() — see @tanstack/router-plugin.
       tanstackRouter({ target: "react" }),

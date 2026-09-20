@@ -27,6 +27,7 @@ export const Hero: FC = () => {
             alt="Galacius dashboard"
             width={3019}
             height={1893}
+            fetchPriority="high"
             className="block h-full w-full object-cover"
           />
         </div>

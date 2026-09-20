@@ -36,6 +36,5 @@ export function buildRobotsTxt(config: RobotsConfig): string {
     `Allow: /`,
     ``,
     `Sitemap: ${normalizedSiteUrl}/sitemap.xml`,
-    `LLMs: ${normalizedSiteUrl}/llms.txt`,
   ].join("\n")
 }
