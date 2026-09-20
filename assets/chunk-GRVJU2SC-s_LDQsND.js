@@ -1,0 +1,2 @@
+import"./rolldown-runtime-CbXtAM7H.js";import{V as e,g as t,n}from"./Skeleton-BHbkccBK.js";e();var r=t(),i=({className:e})=>(0,r.jsx)(`hr`,{className:n(`w-full border-border`,e)});Intl.supportedValuesOf(`timeZone`);export{i as t};
+//# sourceMappingURL=chunk-GRVJU2SC-s_LDQsND.js.map

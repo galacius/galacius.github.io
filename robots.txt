@@ -28,4 +28,3 @@ User-agent: Googlebot-Extended
 Allow: /
 
 Sitemap: https://galacius.github.io/sitemap.xml
-LLMs: https://galacius.github.io/llms.txt
