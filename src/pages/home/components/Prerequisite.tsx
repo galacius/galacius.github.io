@@ -1,6 +1,7 @@
 import type { FC } from "react"
 import { DownloadIcon } from "@galacius/design-system/atoms"
 import { Key, Zap } from "lucide-react"
+import { InformationCard } from "../../../components/InformationCard"
 import { Section } from "./Section"
 
 export const Prerequisite: FC = () => {
@@ -15,35 +16,23 @@ export const Prerequisite: FC = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-lg border border-border bg-muted p-6">
-            <div className="mb-4 flex gap-4">
-              <Zap className="size-6 text-success" />
-              <h3 className="text-h3 font-heading text-foreground">Zero dependencies</h3>
-            </div>
-            <p className="text-body text-muted-foreground">
-              Single binary with everything included—no runtimes or libraries to install.
-            </p>
-          </div>
+          <InformationCard
+            icon={<Zap className="size-6 text-success" />}
+            title="Zero dependencies"
+            description="Single binary with everything included—no runtimes or libraries to install."
+          />
 
-          <div className="rounded-lg border border-border bg-muted p-6">
-            <div className="mb-4 flex gap-4">
-              <DownloadIcon className="size-6 text-success" />
-              <h3 className="text-h3 font-heading text-foreground">Single file, ~50 MB</h3>
-            </div>
-            <p className="text-body text-muted-foreground">
-              Download once, run anywhere. A self-contained desktop app, no installation wizard.
-            </p>
-          </div>
+          <InformationCard
+            icon={<DownloadIcon className="size-6 text-success" />}
+            title="Single file, ~50 MB"
+            description="Download once, run anywhere. A self-contained desktop app, no installation wizard."
+          />
 
-          <div className="rounded-lg border border-border bg-muted p-6">
-            <div className="mb-4 flex gap-4">
-              <Key className="size-6 text-success" />
-              <h3 className="text-h3 font-heading text-foreground">Uses your kubeconfig</h3>
-            </div>
-            <p className="text-body text-muted-foreground">
-              Connects directly to clusters you already use—reads from ~/.kube/config.
-            </p>
-          </div>
+          <InformationCard
+            icon={<Key className="size-6 text-success" />}
+            title="Uses your kubeconfig"
+            description="Connects directly to clusters you already use—reads from ~/.kube/config."
+          />
         </div>
       </div>
     </Section>
