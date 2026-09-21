@@ -37,3 +37,4 @@
 
 - [App](https://galacius.github.io/): Live product site
 - [Source & releases](https://github.com/galacius/galacius): GitHub repository
+- [Author](https://gknguyen.info): Created and maintained by GK Nguyen
