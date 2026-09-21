@@ -8,6 +8,8 @@ interface AeoConfig {
   name: string
   description: string
   pages: PageMeta[]
+  authorName?: string
+  authorUrl?: string
 }
 
 export function aeoPlugin(config: AeoConfig): Plugin {

@@ -5,6 +5,8 @@ export interface SchemaConfig {
   name: string
   description: string
   page: PageMeta
+  authorName?: string
+  authorUrl?: string
 }
 
 /** Escapes characters that would let embedded JSON break out of a `<script>` tag. */
@@ -17,8 +19,19 @@ export function buildSchemaTags(config: SchemaConfig): string {
   const isHome = config.page.path === "/"
 
   const schemas: object[] = []
+  const authorId = `${normalizedSiteUrl}/#author`
 
   if (isHome) {
+    if (config.authorName && config.authorUrl) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": authorId,
+        name: config.authorName,
+        url: config.authorUrl,
+      })
+    }
+
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -26,6 +39,7 @@ export function buildSchemaTags(config: SchemaConfig): string {
       name: config.name,
       url: normalizedSiteUrl,
       logo: `${normalizedSiteUrl}/og-image.png`,
+      ...(config.authorName && config.authorUrl ? { founder: { "@id": authorId } } : {}),
     })
 
     schemas.push({
@@ -59,6 +73,7 @@ export function buildSchemaTags(config: SchemaConfig): string {
         "Install via Homebrew on macOS",
         "Install via apt on Ubuntu",
       ],
+      ...(config.authorName && config.authorUrl ? { author: { "@id": authorId } } : {}),
     })
   }
 

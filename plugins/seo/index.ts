@@ -8,6 +8,8 @@ interface SeoConfig {
   name: string
   description: string
   pages: PageMeta[]
+  authorName?: string
+  authorUrl?: string
 }
 
 export const SCHEMA_MARKER_START = "<!-- seo:schema:start -->"
@@ -27,6 +29,8 @@ export function seoPlugin(config: SeoConfig): Plugin {
         name: config.name,
         description: config.description,
         page: homePage,
+        authorName: config.authorName,
+        authorUrl: config.authorUrl,
       })
       return html.replace(
         "</head>",

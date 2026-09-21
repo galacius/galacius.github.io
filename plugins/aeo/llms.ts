@@ -5,6 +5,8 @@ export interface LlmsConfig {
   name: string
   description: string
   pages: PageMeta[]
+  authorName?: string
+  authorUrl?: string
 }
 
 export function buildLlmsTxt(config: LlmsConfig): string {
@@ -53,5 +55,8 @@ export function buildLlmsTxt(config: LlmsConfig): string {
     ``,
     `- [App](${normalizedSiteUrl}/): Live product site`,
     `- [Source & releases](https://github.com/galacius/galacius): GitHub repository`,
+    ...(config.authorName && config.authorUrl
+      ? [`- [Author](${config.authorUrl}): Created and maintained by ${config.authorName}`]
+      : []),
   ].join("\n")
 }

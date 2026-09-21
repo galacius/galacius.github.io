@@ -48,12 +48,16 @@ export default defineConfig(({ mode }) => {
         name: env.VITE_APP_NAME,
         description: env.VITE_APP_DESCRIPTION,
         pages,
+        authorName: env.VITE_APP_PUBLISHER,
+        authorUrl: env.VITE_APP_AUTHOR_URL,
       }),
       aeoPlugin({
         siteUrl: env.VITE_APP_SITE_URL,
         name: env.VITE_APP_NAME,
         description: env.VITE_APP_DESCRIPTION,
         pages,
+        authorName: env.VITE_APP_PUBLISHER,
+        authorUrl: env.VITE_APP_AUTHOR_URL,
       }),
       ssgPlugin({
         entry: "./src/entry-server.tsx",
