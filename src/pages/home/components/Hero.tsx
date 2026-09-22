@@ -5,7 +5,7 @@ import heroDemo1024Avif from "../../../assets/home/hero/hero-demo-1024.avif"
 import heroDemo640Webp from "../../../assets/home/hero/hero-demo-640.webp"
 import heroDemo1024Webp from "../../../assets/home/hero/hero-demo-1024.webp"
 import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
-import { GithubLicenseBadge } from "./badges/GithubLicenseBadge"
+import { GithubLicenseBadge } from "../../../components/badges/GithubLicenseBadge"
 import { Section } from "./Section"
 
 export const Hero: FC = () => {

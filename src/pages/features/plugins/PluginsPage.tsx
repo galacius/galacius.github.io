@@ -5,6 +5,7 @@ import pluginsHero1536Avif from "../../../assets/features/plugins/plugins-hero-1
 import pluginsHero1024Webp from "../../../assets/features/plugins/plugins-hero-1024.webp"
 import pluginsHero1536Webp from "../../../assets/features/plugins/plugins-hero-1536.webp"
 import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
+import { PluginMarketplaceReleaseBadge } from "../../../components/badges/PluginMarketplaceReleaseBadge"
 
 export const PluginsPage: FC = () => {
   return (
@@ -36,6 +37,10 @@ export const PluginsPage: FC = () => {
             },
           ]}
         />
+      </div>
+
+      <div className="mt-6 flex justify-center">
+        <PluginMarketplaceReleaseBadge />
       </div>
 
       <p className="text-lead mx-auto mt-6 max-w-2xl text-center text-muted-foreground">

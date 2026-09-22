@@ -4,8 +4,10 @@ interface GithubRelease {
   tag_name: string
 }
 
-export const useGetGithubLatestRelease = () => {
-  const url = `${import.meta.env.VITE_APP_RELEASE_API_URL}/latest`
+export const useGetGithubLatestRelease = (
+  releaseApiUrl: string = import.meta.env.VITE_APP_RELEASE_API_URL
+) => {
+  const url = `${releaseApiUrl}/latest`
   return useQuery({
     queryKey: ["fetch", url],
     queryFn: async (): Promise<GithubRelease> => {
