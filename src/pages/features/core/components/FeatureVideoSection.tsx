@@ -1,7 +1,10 @@
 import type { FC } from "react"
 import { VideoWithSkeleton } from "../../../../components/media/VideoWithSkeleton"
+import { trackEvent } from "../../../../lib/gtag"
 
 export type FeatureVideoSectionProps = {
+  /** Identifies this video for analytics (e.g. play tracking). */
+  section: string
   heading: string
   headingLevel?: "h1" | "h2"
   description: string
@@ -30,10 +33,13 @@ const TextColumn: FC<
 )
 
 const VideoColumn: FC<
-  Pick<FeatureVideoSectionProps, "poster" | "webmSrc" | "mp4Src" | "width" | "height"> & {
+  Pick<
+    FeatureVideoSectionProps,
+    "section" | "poster" | "webmSrc" | "mp4Src" | "width" | "height"
+  > & {
     className?: string
   }
-> = ({ poster, webmSrc, mp4Src, width, height, className }) => (
+> = ({ section, poster, webmSrc, mp4Src, width, height, className }) => (
   <div className={className}>
     <VideoWithSkeleton
       poster={poster}
@@ -45,6 +51,7 @@ const VideoColumn: FC<
       width={width}
       height={height}
       className="h-auto w-full object-cover"
+      onPlay={() => trackEvent("feature_video_play", { section })}
     >
       <source src={webmSrc} type="video/webm" />
       <source src={mp4Src} type="video/mp4" />
@@ -56,6 +63,7 @@ const VideoColumn: FC<
  * first on mobile either way. Set `reverse` to put the text in the larger column on the left
  * and the video on the right, instead of the default video-left/text-right layout. */
 export const FeatureVideoSection: FC<FeatureVideoSectionProps> = ({
+  section,
   heading,
   headingLevel,
   description,
@@ -79,6 +87,7 @@ export const FeatureVideoSection: FC<FeatureVideoSectionProps> = ({
           <>
             <TextColumn heading={heading} headingLevel={headingLevel} description={description} />
             <VideoColumn
+              section={section}
               poster={poster}
               webmSrc={webmSrc}
               mp4Src={mp4Src}
@@ -90,6 +99,7 @@ export const FeatureVideoSection: FC<FeatureVideoSectionProps> = ({
         ) : (
           <>
             <VideoColumn
+              section={section}
               poster={poster}
               webmSrc={webmSrc}
               mp4Src={mp4Src}

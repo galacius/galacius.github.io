@@ -7,6 +7,7 @@ import { FeatureVideoSection } from "./FeatureVideoSection"
 export const PortForward: FC = () => {
   return (
     <FeatureVideoSection
+      section="port_forward"
       reverse
       heading="Port-forward to any pod or service in a click."
       description="Start and stop port forwarding straight from a Pod or Service view — no more juggling terminal tabs or remembering kubectl port-forward syntax."

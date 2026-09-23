@@ -2,12 +2,14 @@ import { Button } from "@galacius/design-system/atoms"
 import { useCopyToClipboard } from "@galacius/design-system/hooks"
 import { CheckIcon, CopyIcon } from "lucide-react"
 import type { FC } from "react"
+import { trackEvent } from "../../../lib/gtag"
 
 interface CodeBlockProps {
   code: string
+  section: string
 }
 
-export const CodeBlock: FC<CodeBlockProps> = ({ code }) => {
+export const CodeBlock: FC<CodeBlockProps> = ({ code, section }) => {
   const { copiedValue, copy } = useCopyToClipboard()
   const isCopied = copiedValue !== null
 
@@ -18,7 +20,10 @@ export const CodeBlock: FC<CodeBlockProps> = ({ code }) => {
       </pre>
       <Button
         variant="ghost"
-        onClick={() => copy(code)}
+        onClick={() => {
+          copy(code)
+          trackEvent("code_copy_click", { section })
+        }}
         className="h-auto shrink-0 gap-1 rounded px-2 py-1 text-xs text-muted-foreground hover:bg-background hover:text-foreground"
         title="Copy to clipboard"
       >

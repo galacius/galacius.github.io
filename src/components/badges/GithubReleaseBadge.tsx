@@ -11,6 +11,7 @@ export const GithubReleaseBadge: FC = () => {
       href={import.meta.env.VITE_APP_GITHUB_URL}
       icon={<GithubIcon className="size-4" />}
       label="GITHUB"
+      trackingId="github_release"
       value={data?.tag_name}
       isPending={isPending}
       skeletonClassName="w-10"

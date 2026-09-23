@@ -7,6 +7,7 @@ import { FeatureVideoSection } from "./FeatureVideoSection"
 export const Workload: FC = () => {
   return (
     <FeatureVideoSection
+      section="workload"
       reverse
       headingLevel="h1"
       heading="List & detail views for every workload."

@@ -7,6 +7,7 @@ import { FeatureVideoSection } from "./FeatureVideoSection"
 export const PodLogsExec: FC = () => {
   return (
     <FeatureVideoSection
+      section="pod_logs_exec"
       heading="Stream pod logs and exec straight into a terminal."
       description="Tail live logs for any pod without leaving the app, then jump into an interactive exec session in the same terminal view — no context switching to kubectl required."
       poster={podLogsDemoPoster}

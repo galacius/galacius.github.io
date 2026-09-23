@@ -10,6 +10,7 @@ export const MacosContent: FC = () => {
         <h2 className="text-h2 mb-4">Homebrew</h2>
         <CodeBlock
           code={`brew tap galacius/homebrew-galacius\nbrew trust galacius/galacius/galacius\nbrew install galacius`}
+          section="macos_homebrew"
         />
       </div>
 
@@ -19,6 +20,7 @@ export const MacosContent: FC = () => {
           <p className="text-xs text-muted-foreground">Run the install script.</p>
           <CodeBlock
             code={`curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/main/scripts/install.sh" | bash`}
+            section="macos_manual"
           />
 
           <p className="text-xs text-muted-foreground">

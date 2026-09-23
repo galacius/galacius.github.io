@@ -7,6 +7,7 @@ import { FeatureVideoSection } from "./FeatureVideoSection"
 export const NamespaceFilter: FC = () => {
   return (
     <FeatureVideoSection
+      section="namespace_filter"
       heading="Filter resources across multiple namespaces at once."
       description="Pick any combination of namespaces and every list view narrows down instantly — no more switching context one namespace at a time."
       poster={namespaceFilterDemoPoster}

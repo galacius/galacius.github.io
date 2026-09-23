@@ -1,6 +1,7 @@
 import { Button, TabsContent } from "@galacius/design-system/atoms"
 import { ExternalLinkIcon } from "lucide-react"
 import type { FC } from "react"
+import { trackEvent } from "../../../../lib/gtag"
 import { DownloadButton } from "./DownloadButton"
 
 export const WindowsContent: FC = () => {
@@ -24,6 +25,7 @@ export const WindowsContent: FC = () => {
                     href={import.meta.env.VITE_APP_RELEASE_BASE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("windows_github_click")}
                   />
                 }
               >

@@ -13,6 +13,7 @@ export const PluginMarketplaceReleaseBadge: FC = () => {
       href={import.meta.env.VITE_APP_PLUGINS_GITHUB_URL}
       icon={<GithubIcon className="size-4" />}
       label="PLUGINS MARKETPLACE"
+      trackingId="plugins_marketplace_release"
       value={data?.tag_name}
       isPending={isPending}
       skeletonClassName="w-10"

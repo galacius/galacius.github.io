@@ -9,6 +9,7 @@ export const GithubLicenseBadge: FC = () => {
     <Badge
       href={`${import.meta.env.VITE_APP_GITHUB_URL}/blob/master/LICENSE`}
       label="LICENSE"
+      trackingId="github_license"
       value={data?.license?.spdx_id}
       isPending={isPending}
       skeletonClassName="w-14"

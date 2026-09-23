@@ -1,7 +1,11 @@
 import { createRoot, hydrateRoot } from "react-dom/client"
-import "./styles.css"
+import { initAnalytics, trackPageView } from "./lib/gtag.ts"
 import { createAppRouter } from "./router.tsx"
+import "./styles.css"
 import { createTree } from "./tree.tsx"
+
+initAnalytics()
+trackPageView() // initial load: router.load() already resolved before we subscribe
 
 const router = createAppRouter()
 
@@ -12,6 +16,10 @@ const router = createAppRouter()
 // that was never present in the server-rendered HTML, causing a guaranteed
 // hydration mismatch (React error #418) on every page load.
 router.ssr = { manifest: undefined }
+
+router.subscribe("onResolved", ({ pathChanged }) => {
+  if (pathChanged) trackPageView() // skips hash-only jumps like #installation
+})
 
 await router.load()
 const tree = createTree(router)

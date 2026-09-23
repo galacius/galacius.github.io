@@ -15,6 +15,7 @@ export const LinuxContent: FC = () => {
             <div className="space-y-3">
               <CodeBlock
                 code={`curl -fsSL https://galacius.github.io/galacius-apt/keys/galacius-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/galacius-archive-keyring.gpg\necho "deb [signed-by=/usr/share/keyrings/galacius-archive-keyring.gpg] https://galacius.github.io/galacius-apt noble main" | sudo tee /etc/apt/sources.list.d/galacius.list\nsudo apt-get update && sudo apt-get install galacius`}
+                section="linux_apt"
               />
               <p className="text-xs text-muted-foreground">
                 Other Ubuntu releases (jammy/22.04, focal/20.04) just swap the codename (
@@ -29,6 +30,7 @@ export const LinuxContent: FC = () => {
               <p className="text-xs text-muted-foreground">Run the install script.</p>
               <CodeBlock
                 code={`curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/main/scripts/install.sh" | bash`}
+                section="linux_manual"
               />
 
               <p className="text-xs text-muted-foreground">
