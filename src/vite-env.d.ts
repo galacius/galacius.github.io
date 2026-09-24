@@ -8,6 +8,9 @@ interface ImportMetaEnv {
   readonly VITE_APP_AUTHOR_URL: string
   readonly VITE_APP_PLUGINS_GITHUB_URL: string
   readonly VITE_APP_PLUGINS_RELEASE_API_URL: string
+  readonly VITE_APP_UNIKORN_URL: string
+  readonly VITE_APP_PRODUCT_HUNT_URL: string
+  readonly VITE_APP_PRODUCT_HUNT_EMBED_IMAGE_URL: string
   readonly VITE_GA_MEASUREMENT_ID?: string
 }
 

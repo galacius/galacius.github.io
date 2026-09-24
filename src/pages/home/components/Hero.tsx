@@ -1,11 +1,13 @@
 import type { FC } from "react"
-import heroDemo1024 from "../../../assets/home/hero/hero-demo-1024.png"
-import heroDemo640Avif from "../../../assets/home/hero/hero-demo-640.avif"
 import heroDemo1024Avif from "../../../assets/home/hero/hero-demo-1024.avif"
-import heroDemo640Webp from "../../../assets/home/hero/hero-demo-640.webp"
+import heroDemo1024 from "../../../assets/home/hero/hero-demo-1024.png"
 import heroDemo1024Webp from "../../../assets/home/hero/hero-demo-1024.webp"
-import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
+import heroDemo640Avif from "../../../assets/home/hero/hero-demo-640.avif"
+import heroDemo640Webp from "../../../assets/home/hero/hero-demo-640.webp"
 import { GithubLicenseBadge } from "../../../components/badges/GithubLicenseBadge"
+import { ProductHuntReleaseEmbedBadge } from "../../../components/badges/ProductHuntReleaseEmbedBadge"
+import { UnikornReleaseBadge } from "../../../components/badges/UnikornReleaseBadge"
+import { ImageWithSkeleton } from "../../../components/media/ImageWithSkeleton"
 import { Section } from "./Section"
 
 export const Hero: FC = () => {
@@ -21,7 +23,14 @@ export const Hero: FC = () => {
             Galacius is a lightweight, native desktop app for managing Kubernetes clusters — a
             clean, modern, watch-based UI over your cluster, without the overhead of Electron.
           </p>
-          <GithubLicenseBadge />
+
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+              <GithubLicenseBadge />
+              <UnikornReleaseBadge />
+            </div>
+            <ProductHuntReleaseEmbedBadge />
+          </div>
         </div>
 
         {/* Right Column */}

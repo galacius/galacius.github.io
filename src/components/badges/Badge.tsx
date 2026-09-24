@@ -24,7 +24,7 @@ export const Badge: FC<BadgeProps> = ({
   <Button
     size="sm"
     nativeButton={false}
-    className="h-8 gap-0 overflow-hidden rounded-lg p-0 hover:brightness-95"
+    className="h-8 gap-0 overflow-hidden rounded-lg p-0 transition-transform duration-300 hover:scale-105 hover:brightness-95"
     render={
       <a
         href={href}
