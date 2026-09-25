@@ -8,13 +8,14 @@ import {
 } from "@galacius/design-system/atoms"
 import type { FC } from "react"
 import { ImageWithSkeleton } from "../../components/media/ImageWithSkeleton"
+import { trackEvent } from "../../lib/gtag"
 
 const AUTHOR_URL = import.meta.env.VITE_APP_AUTHOR_URL
 
 export const AuthorModal: FC = () => {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger onClick={() => trackEvent("author_modal_open")}>
         <span className="cursor-pointer text-white italic hover:text-white/80">@gknguyen</span>
       </DialogTrigger>
       <DialogContent size="md" showCloseButton={false}>
@@ -55,6 +56,7 @@ export const AuthorModal: FC = () => {
               target="_blank"
               rel="noreferrer"
               className="text-info underline hover:text-info/80"
+              onClick={() => trackEvent("author_link_click", { href: AUTHOR_URL })}
             >
               gknguyen.info
             </a>
