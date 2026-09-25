@@ -1,7 +1,6 @@
-import { Button, TabsContent } from "@galacius/design-system/atoms"
-import { ExternalLinkIcon } from "lucide-react"
+import { TabsContent } from "@galacius/design-system/atoms"
 import type { FC } from "react"
-import { trackEvent } from "../../../../lib/gtag"
+import { CodeBlock } from "../CodeBlock"
 import { DownloadButton } from "./DownloadButton"
 
 export const WindowsContent: FC = () => {
@@ -9,36 +8,51 @@ export const WindowsContent: FC = () => {
     <TabsContent value="windows" className="space-y-4">
       <div>
         <h2 className="text-h2 mb-4">Manual</h2>
-        <div className="space-y-3">
-          <div className="rounded-lg border border-border bg-muted p-4">
-            <p className="mb-4 text-sm text-muted-foreground">
-              Windows support and prebuilt installers aren't published yet. Check the releases page
-              for updates.
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button
-                variant="outline"
-                size="lg"
-                nativeButton={false}
-                render={
-                  <a
-                    href={import.meta.env.VITE_APP_RELEASE_BASE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackEvent("windows_github_click")}
-                  />
-                }
-              >
-                View on GitHub
-                <ExternalLinkIcon className="h-4 w-4" />
-              </Button>
+
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-h3 mb-4">PowerShell</h3>
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">
+                Run from Windows PowerShell or PowerShell 7+.
+              </p>
+              <CodeBlock
+                code={`irm https://raw.githubusercontent.com/galacius/galacius/master/scripts/install.ps1 | iex`}
+                section="windows_powershell"
+              />
+              <p className="text-xs text-muted-foreground">
+                Installs to <code className="font-mono">%LOCALAPPDATA%\Programs\Galacius</code>,
+                adds it to your user PATH, and creates a Start Menu shortcut.
+              </p>
             </div>
           </div>
 
-          <p className="text-xs text-muted-foreground">
-            Or click the button below to download the binary directly.
-          </p>
-          <DownloadButton asset="galacius-windows-amd64.exe" label="Download for Windows (amd64)" />
+          <div>
+            <h3 className="text-h3 mb-4">Git Bash</h3>
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">
+                Same script as Linux/macOS — works as-is in Git Bash, MSYS2, or Cygwin.
+              </p>
+              <CodeBlock
+                code={`curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/master/scripts/install.sh" | bash`}
+                section="windows_gitbash"
+              />
+              <p className="text-xs text-muted-foreground">
+                Adds it to PATH for Git Bash sessions only. For a system-wide install, use
+                PowerShell above instead.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Or click the button below to download the binary directly.
+            </p>
+            <DownloadButton
+              asset="galacius-windows-amd64.exe"
+              label="Download for Windows (amd64)"
+            />
+          </div>
         </div>
       </div>
     </TabsContent>

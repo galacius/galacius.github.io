@@ -29,7 +29,7 @@ export const LinuxContent: FC = () => {
             <div className="space-y-3">
               <p className="text-xs text-muted-foreground">Run the install script.</p>
               <CodeBlock
-                code={`curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/main/scripts/install.sh" | bash`}
+                code={`curl -fsSL "https://raw.githubusercontent.com/galacius/galacius/master/scripts/install.sh" | bash`}
                 section="linux_manual"
               />
 
