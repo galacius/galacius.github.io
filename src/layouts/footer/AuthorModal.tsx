@@ -28,7 +28,7 @@ export const AuthorModal: FC = () => {
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
             <div className="flex flex-col items-center">
               <ImageWithSkeleton
-                src={`${AUTHOR_URL}/payments/momo.jpg`}
+                src={`${AUTHOR_URL}/payments/momo.jpg?utm_campaign=galacius`}
                 alt="MOMO payment QR code"
                 className="h-40 w-40 sm:h-50 sm:w-50"
               />
@@ -39,7 +39,7 @@ export const AuthorModal: FC = () => {
 
             <div className="flex flex-col items-center">
               <ImageWithSkeleton
-                src={`${AUTHOR_URL}/payments/paypal.jpeg`}
+                src={`${AUTHOR_URL}/payments/paypal.jpeg?utm_campaign=galacius`}
                 alt="PayPal payment QR code"
                 className="h-40 w-40 sm:h-50 sm:w-50"
               />
@@ -52,7 +52,7 @@ export const AuthorModal: FC = () => {
           <div className="text-center">
             Get to know more about me at{" "}
             <a
-              href={AUTHOR_URL}
+              href={`${AUTHOR_URL}?utm_campaign=galacius`}
               target="_blank"
               rel="noreferrer"
               className="text-info underline hover:text-info/80"
