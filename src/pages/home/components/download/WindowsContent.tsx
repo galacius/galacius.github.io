@@ -5,7 +5,20 @@ import { DownloadButton } from "./DownloadButton"
 
 export const WindowsContent: FC = () => {
   return (
-    <TabsContent value="windows" className="space-y-4">
+    <TabsContent value="windows" className="space-y-6">
+      <div>
+        <h2 className="text-h2 mb-4">winget</h2>
+        <div className="space-y-3">
+          <CodeBlock code={`winget install galacius.Galacius`} section="windows_winget" />
+          <p className="text-xs text-muted-foreground">
+            Windows SmartScreen may warn on first run because the binary isn't code-signed yet.
+            Click More info → Run anyway. Upgrade with{" "}
+            <code className="font-mono">winget upgrade galacius.Galacius</code> rather than the
+            in-app updater, to keep winget's version record in sync.
+          </p>
+        </div>
+      </div>
+
       <div>
         <h2 className="text-h2 mb-4">Manual</h2>
 
